@@ -1,0 +1,372 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --primary-blue: rgba(38, 64, 101, 1);
+  --accent-teal: rgba(169, 214, 203, 1);
+  --light-background: rgba(250, 248, 245, 1);
+  --dark-text: #2d3748;
+  --light-text: rgba(144, 144, 144, 1);
+  --secondary-blue-btn: #3b82f6;
+  --font-primary: "Poppins", sans-serif;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --border-radius-main: 8px;
+  --border-radius-btn: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--dark-text);
+  background-color: var(--light-background);
+  position: relative;
+}
+
+.container {
+  width: 90%;
+  max-width: 1920px;
+  max-height: 820px;
+  margin-left: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: 64px;
+  color: var(--primary-blue);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+  padding-right: 200px;
+}
+
+/* --- Botones --- */
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.8em;
+  border-radius: var(--border-radius-btn);
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1a2e50;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+}
+
+.header-actions .btn-secondary {
+  background-color: var(--secondary-blue-btn);
+  color: var(--light-text);
+  border: none;
+}
+.header-actions .btn-secondary:hover {
+  background-color: #2563eb;
+}
+
+/* --- Header --- */
+header {
+  background-color: transparent;
+  color: var(--card-shadow-text);
+  padding: 1rem 0;
+  position: sticky;
+  z-index: 1000;
+  box-shadow: none;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 50px;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li {
+  margin: 0 1rem;
+}
+
+header nav ul li a {
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+  font-size: 0.8rem;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: var(--accent-teal);
+}
+
+.dropdown i {
+  font-size: 0.7em;
+  margin-left: 0.3em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions .icon-btn {
+  font-size: 1.2rem;
+  margin-left: 1.2rem;
+  color: var(--light-text);
+}
+
+.header-actions .btn {
+  margin-left: 1.2rem;
+  padding: 0.6em 1.8em;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  padding-top: 0;
+  position: relative;
+  background-color: var(--background-cream);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 1. ESTILOS PARA EL RECTÁNGULO VERDE Y LA MARCA DE AGUA */
+.hero-background-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 33%;
+  background-color: var(--accent-teal);
+  z-index: 0;
+}
+
+.hero-watermark-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: none;
+  transform: translate(-25%);
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 0rem;
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1920px;
+  transform: translate();
+}
+
+.hero-content {
+  flex: 1 0 55%;
+  padding-right: 0rem;
+}
+
+.hero-content > p {
+  font-size: 24px;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.watch-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--primary-blue);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.play-icon-wrapper {
+  background-color: #ffffff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.watch-video:hover .play-icon-wrapper {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+.play-icon-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.hero-image-area {
+  flex: 1 1 45%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-model-image {
+  max-width: 1500px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  transform: translate(-650px);
+}
+
+/* --- Testimonial Cards --- */
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-main);
+  box-shadow: var(--card-shadow);
+  position: absolute;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.testimonial-card i.fa-quote-left {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  display: block;
+}
+
+.testimonial-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-bottom: 0rem;
+  color: rgba(7, 13, 21, 1);
+}
+
+.testimonial-card span {
+  font-weight: 18px;
+  color: var(--primary-blue);
+  padding-top: 1rem;
+}
+
+.testimonial-1 {
+  bottom: 40%;
+  right: 50%;
+}
+
+.testimonial-2 {
+  bottom: 12%;
+  right: 60%;
+}
+
+/* --- Stats Overview --- */
+.stats-overview {
+  display: flex;
+  gap: 1.5rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius-main);
+  box-shadow: var(--card-shadow);
+  margin-top: 2rem;
+  justify-content: space-around;
+  max-width: 70%;
+  margin-left: 0;
+  margin-right: auto;
+  backdrop-filter: blur(16px);
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-icon-bg {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-teal);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0.75rem auto;
+}
+
+.stat-icon-bg img {
+  width: 60px;
+  height: 60px;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 1.3rem;
+  color: var(--light-text);
+}
+
+.hero-vertical-white-bar {
+  position: absolute;
+  background-color: #ffffff;
+  width: 2000px;
+  height: 25%;
+  bottom: 0%;
+  right: 0%;
+  z-index: 1;
+}
